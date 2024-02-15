@@ -1,0 +1,29 @@
+PYTHON SELENIUM CON XPATH PASO A PASO
+
+Una vez en el navegador: http://demo-store.seleniumacademy.com/
+Herramientas del desarrollador:
+
+1.	ctrl + l para eliminar lo de JQuery (Para limpiar la consola)
+2.	$x('html') devuelve todo el contenido de la página, osea, el html
+
+Puedo ir buscando ciertas etiquetas con // para que me entregue el contenido anidado 
+•	$x('//div')
+•	$x('//h3')
+•	$x('//h1')
+•	$x('//a')
+•	$x('//li')
+
+Ahora, ¿cómo hacemos una dirección para que localice un elemento? Por ejemplo, de estos dentro del navbar:  
+Si toco Women me doy cuenta de que cada elemento anidado tiene una jerarquía, y desde el elemento <nav baja al elemento <a. 
+ 
+Entonces, escribamos directamente esta expresión siendo específicos para evitar el retorno de muchos elementos añadiendo la función text para que devuelva sólo el texto de lo que deseo ver y para poder desplegar el texto que contienen esas etiquetas se escribe la siguiente función .map(x=>x.wholeText) y devolverá todos los campos del navbar:
+•	$x(‘//nav/ol/li/a/text()’).map(x=>x.wholeText)
+
+Y ahora solo el menú Women, debemos usar atributos o clase para ser más específicos y para escribirlo solo nos quedamos con la etiqueta que contiene ese atributo, y para escribir en xpath ese atributo usamos [] y se abren comillas dobles para llamar dentro a este atributo level0 nav-1 first parent:  
+•	$x(‘//nav/ol/li/[@class=” level0 nav-1 first parent”]/a/text()’).map(x=>x.wholeText)
+
+Otros escenarios en los que no tenemos todo este texto level0 nav-1 first parent que vendría a ser el nombre de la clase, sino que queremos buscar solo buscarlo por el atributo que es nav-1 o sea, solo una porción especifica de la clase con una función de xpath llamada contains y decir sobre que quiero buscar el texto
+•	$x(‘//nav/ol/li/[contains(@class, “nav-1”)]/a/text()’).map(x=>x.wholeText)
+
+Y ahora para obtener una coincidencia de el texto Women que se encuentre entre la etiqueta <a  puedo escribir directamente la palabra tal cual aparece:
+•	$x(‘//nav/ol/li/a[contains(text(), “Women”)]/text()’).map(x=>x.wholeText)
