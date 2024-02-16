@@ -27,3 +27,34 @@ Otros escenarios en los que no tenemos todo este texto level0 nav-1 first parent
 
 Y ahora para obtener una coincidencia de el texto Women que se encuentre entre la etiqueta <a  puedo escribir directamente la palabra tal cual aparece:
 •	$x(‘//nav/ol/li/a[contains(text(), “Women”)]/text()’).map(x=>x.wholeText)
+
+
+Introduction (00:01): The instructor introduces the topic of XPath and its application in automating tasks with Selenium, including web scraping.
+
+Understanding XPath (02:30): The instructor explains that XPath is essentially a query language designed for navigating XML documents, but it can also be used with HTML due to its tree-like structure.
+
+Using XPath to Locate Elements (07:30): The instructor demonstrates how to use XPath to navigate HTML tags and access specific elements on a webpage.
+
+Extracting Text and Attributes (14:47): The instructor shows how to use XPath to extract specific text and attributes from a webpage, such as locating text within tags and attributes.
+
+Locating Specific Elements (21:31): The instructor provides examples of using XPath to locate specific elements on a web page, such as finding an <h1> tag or a <li> tag within a list.
+
+Checking Browser Version and Downloading Drivers (28:05): The instructor guides viewers on how to check their browser version and download the corresponding WebDriver for Selenium.
+
+Executing Commands with Selenium (30:10): The instructor demonstrates how to execute commands with Selenium, including opening a browser with Python and maximizing the window.
+
+Searching for Text in Selenium WebDriver (34:22): The instructor shows how to search for text in a Selenium WebDriver instance.
+
+Retrieving Multiple Elements (36:23): The instructor explains how to use find_elements to retrieve multiple elements and iterate through them.
+
+Automating Form Filling (41:03): The instructor demonstrates how to automate form filling on web pages using XPath to identify and fill in form elements.
+
+Identifying and Filling Form Fields (43:22): The instructor continues with examples of identifying and filling form fields using XPath.
+
+Creating Objects and Interacting with Elements (48:45): The instructor introduces the concept of creating objects and interacting with elements using functions.
+
+Initializing Selenium and Setting Driver Attributes (50:58): The instructor walks through the process of initializing Selenium and setting driver attributes.
+
+Generating a Method to Fill Out Records (56:14): The instructor generates a method to fill out records using the class created earlier in the tutorial.
+
+Conclusion (58:45): The instructor concludes the tutorial by summarizing the key concepts covered and encouraging viewers to practice and experiment with the techniques demonstrated.
