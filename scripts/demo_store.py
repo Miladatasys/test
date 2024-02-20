@@ -6,28 +6,23 @@ from selenium.webdriver.common.by import By
 
 url = 'http://demo-store.seleniumacademy.com/'
 
-# Set the path to the chromedriver executable
 path_driver = r'C:\Projects\test\drivers\chromedriver.exe'
 
-# Create a service object with the path to the chromedriver executable
 service = Service(executable_path=path_driver)
 
-# Initialize the WebDriver with the service object
 driver = webdriver.Chrome(service=service)
 
-# Maximize the window and navigate to the URL
 driver.maximize_window()
 driver.get(url)
 
-# Find the element using XPath and print its text
 text_1 = driver.find_element(By.XPATH, '//nav/ol/li/a[contains(text(), "Women")]')
 print(text_1.text)
 
-'''
+
 texts_2 = driver.find_elements(By.XPATH, '//nav/ol/li/a')
 for i in texts_2:
     print(i.text)
-'''
+
 
 account = driver.find_element(By.XPATH,'//span[contains(text(), "Account")]')
 account.click()
@@ -61,8 +56,6 @@ check_input.click()
 register = driver.find_element(By.XPATH, '//button[@title="Register"]')
 register.click()
 
-# Wait for   10 seconds before closing the script
 time.sleep(10)
 
-# Close the browser window
 driver.quit()

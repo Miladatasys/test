@@ -1,5 +1,4 @@
 # Logic report and data collection
-import pandas
 from selenium.webdriver.remote.webelement import WebElement
 from selenium.webdriver.common.by import By
 
